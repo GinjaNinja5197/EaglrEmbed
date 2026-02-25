@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Eaglercraft Fullscreen</title>
+<title>Eaglercraft</title>
 <style>
 html, body {
   margin: 0;
@@ -11,22 +11,27 @@ html, body {
   background: black;
   overflow: hidden;
 }
+
 #gameFrame {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   border: none;
 }
-#fsButton {
+
+#fullscreenBtn {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
   padding: 12px 18px;
-  font-size: 16px;
-  background: #111;
+  background: rgba(0,0,0,0.7);
   color: white;
   border: 1px solid white;
   cursor: pointer;
-  z-index: 1000;
+  font-size: 16px;
+  z-index: 9999;
 }
 </style>
 </head>
@@ -37,10 +42,10 @@ src="https://eaglercraft.q13x.com/1.8.8/js/"
 allowfullscreen>
 </iframe>
 
-<button id="fsButton" onclick="goFullscreen()">Fullscreen</button>
+<button id="fullscreenBtn" onclick="enterFullscreen()">Fullscreen</button>
 
 <script>
-function goFullscreen() {
+function enterFullscreen() {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
   }
