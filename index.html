@@ -8,16 +8,44 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background: black;
   overflow: hidden;
 }
-iframe {
+#gameFrame {
   width: 100vw;
   height: 100vh;
   border: none;
 }
+#fsButton {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 12px 18px;
+  font-size: 16px;
+  background: #111;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 1000;
+}
 </style>
 </head>
 <body>
-<iframe src="https://eaglercraft.q13x.com/1.8.8/js/" allowfullscreen></iframe>
+
+<iframe id="gameFrame"
+src="https://eaglercraft.q13x.com/1.8.8/js/"
+allowfullscreen>
+</iframe>
+
+<button id="fsButton" onclick="goFullscreen()">Fullscreen</button>
+
+<script>
+function goFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  }
+}
+</script>
+
 </body>
 </html>
